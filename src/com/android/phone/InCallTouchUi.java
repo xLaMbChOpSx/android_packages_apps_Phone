@@ -976,7 +976,6 @@ public class InCallTouchUi extends FrameLayout
 
     }
 
-    @Override
     public void onTargetChange(View view, int whichHandle) {
     }
 
