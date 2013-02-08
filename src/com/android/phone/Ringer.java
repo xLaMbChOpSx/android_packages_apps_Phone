@@ -21,6 +21,7 @@ import android.content.Context;
 import android.media.AudioManager;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
+import android.media.VibrationPattern;
 import android.net.Uri;
 import android.provider.Settings;
 import android.os.Handler;
@@ -57,8 +58,10 @@ public class Ringer {
 
     // Uri for the ringtone.
     Uri mCustomRingtoneUri = Settings.System.DEFAULT_RINGTONE_URI;
+    Uri mCustomVibrationUri = Settings.System.DEFAULT_VIBRATION_URI;
 
     Ringtone mRingtone;
+    VibrationPattern mVibrationPattern;
     Vibrator mVibrator;
     AudioManager mAudioManager;
     IPowerManager mPowerManager;
@@ -167,6 +170,10 @@ public class Ringer {
             }
 
             if (shouldVibrate() && mVibratorThread == null) {
+                mVibrationPattern = new VibrationPattern(mCustomVibrationUri, mContext);
+                if (mVibrationPattern.getPattern() == null) {
+                    mVibrationPattern = VibrationPattern.getFallbackVibration(mContext);
+                }
                 mContinueVibrating = true;
                 mVibratorThread = new VibratorThread();
                 if (DBG) log("- starting vibrator...");
@@ -281,6 +288,7 @@ public class Ringer {
 
             if (mVibratorThread != null) {
                 if (DBG) log("- stopRing: cleaning up vibrator thread...");
+                mVibrationPattern.stop();
                 mContinueVibrating = false;
                 mVibratorThread = null;
             }
@@ -292,8 +300,8 @@ public class Ringer {
     private class VibratorThread extends Thread {
         public void run() {
             while (mContinueVibrating) {
-                mVibrator.vibrate(VIBRATE_LENGTH);
-                SystemClock.sleep(VIBRATE_LENGTH + PAUSE_LENGTH);
+                mVibrationPattern.play();
+                SystemClock.sleep(mVibrationPattern.getLength() + PAUSE_LENGTH);
             }
         }
     }
@@ -340,6 +348,16 @@ public class Ringer {
     void setCustomRingtoneUri (Uri uri) {
         if (uri != null) {
             mCustomRingtoneUri = uri;
+        }
+    }
+
+    /**
+     * Sets the vibration uri in preparation for vibrating.
+     * This uri is defaulted to the phone-wide default vibration.
+     */
+    void setCustomVibrationUri (Uri uri) {
+        if (uri != null) {
+            mCustomVibrationUri = uri;
         }
     }
 

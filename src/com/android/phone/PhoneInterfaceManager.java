@@ -59,6 +59,7 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
     private static final int CMD_END_CALL = 5;  // not used yet
     private static final int CMD_SILENCE_RINGER = 6;
     private static final int CMD_TOGGLE_LTE = 7; // not used yet
+    private static final int CMD_TOGGLE_2G = 8; // not used yet
 
     /** The singleton instance. */
     private static PhoneInterfaceManager sInstance;
@@ -301,6 +302,23 @@ public class PhoneInterfaceManager extends ITelephony.Stub {
         android.provider.Settings.Secure.putInt(mApp.getContentResolver(),
                 android.provider.Settings.Secure.PREFERRED_NETWORK_MODE, network);
     }
+
+// AOKP
+    public void toggle2G(boolean on) {
+        int network = -1;
+        if (on) {
+            network = Phone.NT_MODE_GSM_ONLY;
+        } else {
+            network = Phone.NT_MODE_WCDMA_PREF;
+        }
+        mPhone.setPreferredNetworkType(network,
+                mMainThreadHandler.obtainMessage(CMD_TOGGLE_2G));
+//        Settings.Secure.putInt(mApp.getContentResolver(),
+//                Settings.Secure.PREFERRED_NETWORK_MODE, network);
+        android.provider.Settings.Secure.putInt(mApp.getContentResolver(),
+                android.provider.Settings.Secure.PREFERRED_NETWORK_MODE, network);
+    }
+// AOKP END
 
     private boolean showCallScreenInternal(boolean specifyInitialDialpadState,
                                            boolean initialDialpadState) {
