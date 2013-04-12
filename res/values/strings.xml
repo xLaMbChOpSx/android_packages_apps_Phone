@@ -804,6 +804,8 @@
     <string name="card_title_dialing">Dialing</string>
     <!-- In-call screen: status label for a re-dialing call -->
     <string name="card_title_redialing">Retrying</string>
+    <!-- In-call screen: status label for a call in the "dialing" state that's waiting for the busy remote side -->
+    <string name="card_title_dialing_waiting">Dialing (waiting\u2026)</string>
 
     <!-- In-call screen: status label for a conference call -->
     <string name="card_title_conf_call">Conference call</string>
@@ -830,8 +832,6 @@
     <string name="call_notif_conditionalCF">Conditional call forwarding active</string>
     <!-- Toast text for a forwarded MO call  -->
     <string name="call_notif_MOcall_forwarding">Outgoing call is forwarded</string>
-    <!-- In-call screen: status label when Call waiting is enabled on remote party  -->
-    <string name="call_notif_calliswaiting">Remote party is busy, call is waiting</string>
     <!-- Toast text for MO call, when the caller & callee both belng to a CUG group -->
     <string name="call_notif_cugcall">Call in closed user group</string>
     <!-- In-call screen: status label when MO calls are barred -->
@@ -1566,6 +1566,8 @@
     <string name="vibrate_45_sum">Vibrates at the 45 second mark of every minute during outgoing calls</string>
     <string name="show_ssn_label">Event notification</string>
     <string name="show_ssn_summary">Show a notification for various network events related to call handling</string>
+    <string name="calllog_after_call">Show log</string>
+    <string name="calllog_after_call_summary">Show the call log after ending a call</string>
 
     <!-- Mobile network settings screen, setting check box name -->
     <string name="national_roaming">National data roaming</string>
@@ -1608,6 +1610,29 @@
         <item>mute the ringer</item>
         <item>dismiss the call</item>
     </string-array>
+
+    <!-- Blacklist preferences -->
+    <string name="blacklist_title">Blacklist</string>
+    <string name="enable_blacklist_title">Enable blacklist</string>
+    <string name="blacklist_summary_disabled">Disabled</string>
+    <string name="blacklist_summary">Incoming calls from phone numbers in the blacklist will be blocked</string>
+    <string name="blacklist_notify">Show notification</string>
+    <string name="blacklist_regex_title">Use wildcards</string>
+    <string name="blacklist_regex_summary">Use . as a wildcard and * for repetition. E.g. 123.* blocks numbers starting with 123 and .*123.* blocks numbers containing 123</string>
+
+    <!-- Blacklist management -->
+    <string name="add_blacklist_number">Add phone number</string>
+    <string name="add_to_blacklist">Add to blacklist</string>
+    <string name="add_to_blacklist_message">Future calls from %s will be blocked</string>
+    <string name="remove_blacklist_number_title">Remove number</string>
+    <string name="remove_blacklist_number">Do you want to remove %s from the blacklist?</string>
+
+    <!-- Blacklist notifications -->
+    <string name="blacklist_notification">Blocked a call from %s</string>
+    <string name="unblock_number">Unblock</string>
+
+    <!-- Text for the onscreen "Blacklist" button -->
+    <string name="onscreenBlacklistText">Blacklist</string>
 
     <!-- CYANOGENMOD ADDITIONS END -->
 </resources>
