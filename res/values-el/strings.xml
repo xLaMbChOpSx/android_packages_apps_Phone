@@ -44,7 +44,6 @@
     <string name="callFailed_dsac_restricted_emergency" msgid="4353654268813314466">"Οι κλήσεις επείγουσας ανάγκης περιορίζονται από τον έλεγχο πρόσβασης."</string>
     <string name="callFailed_dsac_restricted_normal" msgid="2680774510252408620">"Οι κανονικές κλήσεις περιορίζονται από τον έλεγχο πρόσβασης."</string>
     <string name="callFailed_unobtainable_number" msgid="4736290912891155067">"Μη έγκυρος αριθμός"</string>
-    <string name="callUnanswered_forwarded">Αναπάντητη κλήση, προωθήθηκε</string>
     <string name="confCall" msgid="1904840547188336828">"Κλήση συνδιάσκεψης"</string>
     <string name="call_lost" msgid="317670617901479594">"Αναπάντητη κλήση."</string>
     <string name="ok" msgid="3811371167865772377">"OK"</string>
@@ -169,11 +168,7 @@
     <string name="preferred_network_mode_cdma_only_summary" msgid="1309770926198634150">"Προτιμώμενη λειτουργία δικτύου: μόνο CDMA"</string>
     <string name="preferred_network_mode_evdo_only_summary" msgid="8472220691721269155">"Προτιμώμενη λειτουργία δικτύου: μόνο EvDo"</string>
     <string name="preferred_network_mode_lte_cdma_summary" msgid="3722647806454528426">"Προτιμώμενη λειτουργία δικτύου: LTE / CDMA"</string>
-    <string name="preferred_network_mode_lte_cdma_evdo_summary">Προτιμώμενη λειτουργία δικτύου: LTE / CDMA / EvDo</string>
-    <string name="preferred_network_mode_lte_gsm_summary">Προτιμώμενη λειτουργία δικτύου: LTE / GSM/WCDMA</string>
-    <string name="preferred_network_mode_lte_cdma_evdo_gsm_wcdma_summary">Προτιμώμενη λειτουργία δικτύου: LTE / CMDA / EvDo / GSM/WCDMA</string>
-    <string name="preferred_network_mode_lte_wcdma_summary">Προτιμώμενη λειτουργία δικτύου: LTE / WCDMA</string>
-  <string-array name="preferred_network_mode_choices">
+   <string-array name="preferred_network_mode_choices">
     <item msgid="5543794538185064048">"Παγκόσμιο"</item>
     <item msgid="3273348576277144124">"Μόνο EvDo"</item>
     <item msgid="454610224530856274">"CDMA w/o EvDo"</item>
@@ -184,16 +179,10 @@
     <item msgid="8508331239546115206">"Προτιμώνται GSM/WCDMA"</item>
   </string-array>
   <string-array name="preferred_network_mode_choices_lte">
-<!--<item>LTE only</item>-->
     <item>LTE/CMDA/EvDo/GSM/WCDMA</item>
     <item>LTE/CDMA/EvDo</item>
     <item>LTE/CDMA</item>
     <item>Αυτόματο CDMA/EvDo</item>
-  </string-array>
-  <string-array name="preferred_network_mode_choices_lte_gsm">
-    <item>LTE/WCDMA</item>
-    <item>LTE/GSM/WCDMA</item>
-    <item>GSM/προτιμώμενο WCDMA</item>
   </string-array>
     <string name="data_enabled" msgid="5972538663568715366">"Ενεργοποίηση δεδομένων"</string>
     <string name="data_enable_summary" msgid="5022018967714633874">"Ενεργοποίηση της πρόσβασης δεδομένων μέσω του δικτύου κινητής τηλεφωνίας"</string>
@@ -533,8 +522,6 @@
     <string name="voicemail_settings" msgid="72448049107749316">"Ρυθμίσεις"</string>
     <string name="voicemail_number_not_set" msgid="6724904736891087856">"&lt;Δεν έχει οριστεί&gt;"</string>
     <string name="other_settings" msgid="3672912580359716394">"Άλλες ρυθμίσεις κλήσης"</string>
-    <string name="dialer_ui_settings_title">Πληκτρολόγιο κλήσης</string>
-    <string name="dialer_ui_settings_summary">Ρυθμίσεις για το πληκτρολόγιο κλήσης</string>
     <string name="calling_via_template" msgid="4839419581866928142">"Κλήση μέσω <xliff:g id="PROVIDER_NAME">%s</xliff:g>"</string>
     <string name="contactPhoto" msgid="4713193418046639466">"φωτογραφία επαφής"</string>
     <string name="goPrivate" msgid="865837794424530980">"ιδιωτική χρήση"</string>
@@ -654,13 +641,7 @@
     <string name="vibrate_on_ring_title" msgid="9197564612065258960">"Δόνηση κατά το κουδούνισμα"</string>
     <string name="dtmf_tone_enable_title" msgid="827601042915852989">"Ήχοι αφής πληκτρολογίου κλήσης"</string>
     <string name="preference_category_ringtone" msgid="5197960752529332721">"Ήχος κλήσης &amp; δόνηση"</string>
-
-    <!-- Noise suppression -->
-    <string name="noise_suppression_title">Καταστολή θορύβου</string>
-    <string name="noise_suppression_summary">Ενεργοποίηση της καταστολής θορύβου κατά τη διάρκεια κλήσεων</string>
-
     <!-- Advanced Settings -->
-    <string name="advanced_setting">Για προχωρημένους</string>
     <string name="vibrate_outgoing">Δόνηση στην απάντηση</string>
     <string name="vibrate_call_waiting">Δόνηση στην αναμονή</string>
     <string name="vibrate_hangup">Δόνηση στο κλείσιμο</string>
